@@ -86,7 +86,12 @@ class Api
 
         $body = json_encode($body);
 
-        $response = $this->client->http()->patch($path, [], $body);
+        $response = $this->client->http()->patch($path, [
+            'body' => $body,
+            'headers' => [
+                'api_key' => $this->client->getApiKey()
+            ]
+        ]);
 
         return $this->parseResponse($response);
     }
