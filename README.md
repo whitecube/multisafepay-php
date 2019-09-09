@@ -17,7 +17,7 @@ You must specify two things before beginning to use the API:
 $client = new Whitecube\MultiSafepay\Client('production', 'your-api-key');
 
 // Example: Get an existing order
-$order = $client->orders()->show('order-id');
+$order = $client->orders()->fetch('order-id');
 ```
 
 ### Orders
